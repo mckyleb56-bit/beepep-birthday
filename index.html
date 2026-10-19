@@ -1,98 +1,212 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>For My Beepep 💚</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#e5efdf;color:#35553b;font-family:Georgia,serif;text-align:center}
-.page{min-height:100vh;padding:25px 15px;display:flex;align-items:center;justify-content:center}
-.card{background:#fffdf5;border-radius:24px;padding:25px 20px;max-width:420px;width:100%;box-shadow:0 8px 25px #35553b20}
-h1{font-size:32px}
-p{line-height:1.8}
-.heart{font-size:48px}
-button{border:0;border-radius:25px;padding:13px 20px;margin:7px;background:#527a59;color:white;font-size:15px;cursor:pointer}
-button:hover{background:#35553b}
-.hidden{display:none}
-.envelope{font-size:85px;cursor:pointer}
-#photo{width:100%;max-height:300px;object-fit:cover;border-radius:15px;margin-top:12px}
-.small{font-size:13px;color:#718570}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #e5efdf;
+  color: #35553b;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 25px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: #fffdf5;
+  border-radius: 24px;
+  padding: 25px 18px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 25px #35553b20;
+}
+
+h1 { font-size: 30px; }
+
+p { line-height: 1.8; }
+
+.heart { font-size: 48px; }
+
+button {
+  border: 0;
+  border-radius: 25px;
+  padding: 13px 18px;
+  margin: 7px;
+  background: #527a59;
+  color: white;
+  font-size: 15px;
+}
+
+.hidden { display: none !important; }
+
+.envelope {
+  font-size: 80px;
+  cursor: pointer;
+}
+
+.small {
+  font-size: 13px;
+  color: #718570;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#viewer {
+  position: fixed;
+  inset: 0;
+  background: #17251fee;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+#bigPhoto {
+  max-width: 95%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+#viewer button { margin-top: 15px; }
 </style>
 </head>
+
 <body>
+
 <section class="page" id="home">
-<div class="card">
-<div class="heart">💚</div>
-<p>A little surprise made with love</p>
-<h1>Happy Birthday,<br>My Beepep! 🎂</h1>
-<p>I made something special just for you.</p>
-<div class="envelope" onclick="show('letter')">💌</div>
-<p>Tap the envelope to open your surprise!</p>
-<button onclick="show('letter')">Open Your Letter 💗</button>
-<p class="small">Made with love by enemy</p>
-</div>
+  <div class="card">
+    <div class="heart">💚</div>
+    <p>A little surprise made with love</p>
+    <h1>Happy Birthday,<br>My Beepep! 🎂</h1>
+    <p>I made something special just for you.</p>
+    <div class="envelope" onclick="show('letter')">💌</div>
+    <p>Tap the envelope to open your surprise!</p>
+    <button onclick="show('letter')">Open Your Letter 💗</button>
+    <p class="small">Made with love by enemy</p>
+  </div>
 </section>
 
 <section class="page hidden" id="letter">
-<div class="card">
-<div class="heart">🌷</div>
-<h1>To My Beepep</h1>
-<p>Happy birthday, my beepep! 💚 I hope your special day brings you happiness, peace, and many reasons to smile.</p>
-<p>Thank you for being part of my life. I am grateful for our memories, our laughs, and all the little moments we share.</p>
-<p>You deserve love, kindness, and beautiful things today and every day. I hope all your wishes come true.</p>
-<p>Even though this surprise is simple, I made it especially for you. Always take care of yourself and keep smiling.</p>
-<h2>Happy Birthday, Love! 💚</h2>
-<p>Love always,<br><b>enemy</b></p>
-<button onclick="show('memories')">Our Memories 📸</button>
-<button onclick="show('home')">Back 💌</button>
-</div>
+  <div class="card">
+    <div class="heart">🌷</div>
+    <h1>To My Beepep</h1>
+
+    <p>Happy birthday, my beepep! 💚 I hope your special day brings you happiness, peace, and many reasons to smile.</p>
+
+    <p>Thank you for being part of my life. I am grateful for our memories, our laughs, and all the little moments we share.</p>
+
+    <p>You deserve love, kindness, and beautiful things today and every day. I hope all your wishes come true.</p>
+
+    <p>Even though this surprise is simple, I made it especially for you. Always take care of yourself and keep smiling.</p>
+
+    <h2>Happy Birthday, Love! 💚</h2>
+    <p>Love always,<br><b>enemy</b></p>
+
+    <button onclick="show('memories')">Our Memories 📸</button>
+    <button onclick="show('home')">Back 💌</button>
+  </div>
 </section>
 
 <section class="page hidden" id="memories">
-<div class="card">
-<div class="heart">📸💚</div>
-<h1>Our Memories</h1>
-<p>Every little moment with you is a memory worth keeping.</p>
-<p>Choose a picture of you two from your phone:</p>
-<input type="file" accept="image/*" onchange="addPhoto(event)">
-<img id="photo" class="hidden" alt="Our memory">
-<p id="caption">Our little world, our special memories. 💚</p>
-<button onclick="show('wish')">One More Surprise 🎁</button>
-<button onclick="show('letter')">Back 💌</button>
-</div>
+  <div class="card">
+    <div class="heart">📸💚</div>
+    <h1>Our Memories</h1>
+    <p>Every little moment with you is a memory worth keeping.</p>
+    <p>Tap any picture to see it bigger. 💚</p>
+
+    <div class="gallery">
+      <img src="IMG_20260719_164629.jpg" onclick="openPhoto(this.src)">
+      <img src="IMG_20260719_165046.jpg" onclick="openPhoto(this.src)">
+      <img src="IMG_20260719_165132~7.jpg" onclick="openPhoto(this.src)">
+      <img src="IMG_20260719_165358.jpg" onclick="openPhoto(this.src)">
+      <img src="IMG_20260719_165523_HDR.jpg" onclick="openPhoto(this.src)">
+      <img src="IMG_20260719_165526_HDR.jpg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_22060E6C-A627-44BA-B236-001C0BB7C16C.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_33993636-8BFE-4E81-B2D4-76F247B3D932.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_5352DE85-94DB-404C-B65C-47F34B5E75B4.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_686340E5-6C2D-4016-964D-05E7AD375AB8.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_8C3A8FE7-1FAC-4783-AEA7-61736BB306EC.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_A020CE90-1B3A-479A-82D7-43E077C55C73.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_D3ED81A5-726A-4A02-BDBD-69405D4C8ABC.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_DDC84BA0-A56A-453E-93CA-9E54979687AC.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_ECF53D5C-9684-4A90-A0F6-865CBB349754.jpeg" onclick="openPhoto(this.src)">
+      <img src="Messenger_creation_F18B5EA4-0BC7-4F3D-8242-9B6E657FFB3D.jpeg" onclick="openPhoto(this.src)">
+      <img src="att.F7vnT6BXTdSWxJhZwKCGE5QiCgVRSxSOUA85Szkcntg.jpg.jpeg" onclick="openPhoto(this.src)">
+      <img src="att.WCsIFIWQpauOVsFgKg85Da51aHhXKsN46oBPQLp1qHQ.jpg.jpeg" onclick="openPhoto(this.src)">
+    </div>
+
+    <p>Our little world, our special memories. 💚</p>
+    <button onclick="show('wish')">One More Surprise 🎁</button>
+    <button onclick="show('letter')">Back 💌</button>
+  </div>
 </section>
 
-<section class="page hidden" id="wish">
-<div class="card">
-<div class="heart">🎂🎈</div>
-<h1>Make a Wish!</h1>
-<p>Close your eyes, make a wish, and imagine all the beautiful things waiting for you.</p>
-<button onclick="celebrate()">Tap for Birthday Magic ✨</button>
-<p id="magic"></p>
-<button onclick="show('home')">Start Again 💚</button>
+<div id="viewer" class="hidden" onclick="closePhoto()">
+  <img id="bigPhoto" alt="Our memory">
+  <button onclick="closePhoto()">Close ✖</button>
 </div>
+
+<section class="page hidden" id="wish">
+  <div class="card">
+    <div class="heart">🎂🎈</div>
+    <h1>Make a Wish!</h1>
+    <p>Close your eyes, make a wish, and imagine all the beautiful things waiting for you.</p>
+    <button onclick="celebrate()">Tap for Birthday Magic ✨</button>
+    <p id="magic"></p>
+    <button onclick="show('home')">Start Again 💚</button>
+  </div>
 </section>
 
 <script>
-function show(id){
-document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
-document.getElementById(id).classList.remove('hidden');
-window.scrollTo(0,0);
+function show(id) {
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.classList.add('hidden');
+  });
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo(0, 0);
 }
-function addPhoto(event){
-const file=event.target.files[0];
-if(file){
-const img=document.getElementById('photo');
-img.src=URL.createObjectURL(file);
-img.classList.remove('hidden');
-document.getElementById('caption').textContent='A special memory of us! 💚';
+
+function openPhoto(src) {
+  document.getElementById('bigPhoto').src = src;
+  document.getElementById('viewer').classList.remove('hidden');
 }
+
+function closePhoto() {
+  document.getElementById('viewer').classList.add('hidden');
 }
-function celebrate(){
-document.getElementById('magic').textContent='🎉🎉 Happy Birthday, my beepep! May your days be filled with love, laughter, and happiness! 💚🌷🎂';
+
+function celebrate() {
+  document.getElementById('magic').textContent =
+    '🎉 Happy Birthday, my beepep! May your days be filled with love, laughter, and happiness! 💚🌷🎂';
 }
 </script>
+
 </body>
 </html>

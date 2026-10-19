@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#dce8d2">
+<title>For My Beepep 💚</title>
+<style>
+:root{--deep:#31543a;--green:#658363;--sage:#dce8d2;--cream:#fbfaf2;--pink:#f4d8d8}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(145deg,#edf3e8,#dce8d2,#f8f5e9);color:var(--deep);font-family:Georgia,'Times New Roman',serif;text-align:center}
+main{width:min(920px,100%);margin:auto;padding:22px 16px 48px}
+.panel{background:rgba(255,255,250,.88);border:1px solid #c4d5bd;border-radius:26px;padding:28px 20px;margin:18px 0;box-shadow:0 10px 28px #38583b12}
+.kicker{font-style:italic;letter-spacing:2px}
+h1{font-size:clamp(2.5rem,9vw,5rem);margin:10px 0;color:#31543a}
+h2{font-size:clamp(1.7rem,6vw,2.5rem);margin-top:0}
+p{font-size:1.08rem;line-height:1.8}
+.heart{font-size:2rem;color:#658363}
+button{border:0;border-radius:999px;background:#426b4b;color:white;padding:13px 20px;font-size:1rem;cursor:pointer;margin:7px}
+button:hover{background:#2f5037}
+.hidden{display:none}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.photo-slot{min-height:155px;border:2px dashed #9eb498;border-radius:18px;overflow:hidden;background:#eef3e9;display:flex;align-items:center;justify-content:center;padding:8px;color:#557357}
+.photo-slot img{width:100%;height:190px;object-fit:cover;border-radius:12px}
+.photo-slot label{cursor:pointer}
+.photo-slot input{display:block;width:100%;font-size:.8rem;margin-top:10px}
+.cake{font-size:6rem;filter:drop-shadow(0 7px 5px #526b3820)}
+#flame{font-size:1.7rem;display:block;margin-top:-14px}
+.note{background:#f1f5ec;border-radius:18px;padding:18px;text-align:left;white-space:pre-line}
+footer{font-size:.9rem;opacity:.8;padding:12px}
+.small{font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+  <section class="panel">
+    <div class="kicker">a little surprise, made just for you</div>
+    <div class="heart">♡</div>
+    <h1>Open me, My Beepep 💚</h1>
+    <p>A tiny birthday world made with love, just for you.</p>
+    <button onclick="document.getElementById('letter').classList.remove('hidden');document.getElementById('letter').scrollIntoView({behavior:'smooth'})">Open your letter 💌</button>
+    <button onclick="document.getElementById('cake-section').scrollIntoView({behavior:'smooth'})">Make a wish 🎂</button>
+  </section>
+
+  <section class="panel">
+    <div class="kicker">little memories, big feelings</div>
+    <h2>Us, in little moments 📸</h2>
+    <p class="small">To add your real pictures before publishing, put your photos in the <b>photos</b> folder and follow the simple note in README. These preview slots work only on your own device until you add the photos to the site files.</p>
+    <div class="photo-grid">
+      <div class="photo-slot"><label>Our memory 1<br><input type="file" accept="image/*" onchange="preview(this,'p1')"><img id="p1" class="hidden" alt="Memory 1"></label></div>
+      <div class="photo-slot"><label>Our memory 2<br><input type="file" accept="image/*" onchange="preview(this,'p2')"><img id="p2" class="hidden" alt="Memory 2"></label></div>
+      <div class="photo-slot"><label>Our memory 3<br><input type="file" accept="image/*" onchange="preview(this,'p3')"><img id="p3" class="hidden" alt="Memory 3"></label></div>
+    </div>
+  </section>
+
+  <section class="panel" id="letter">
+    <div class="kicker">from Enemy, with all my heart</div>
+    <h2>A letter for my Beepep 💌</h2>
+    <div class="note">Happy birthday, my Beepep. 💚
+
+I hope today reminds you how special you are and how much happiness you bring into my life. Even the little moments with you mean a lot to me, and I’m thankful for every laugh, every memory, and every time you make an ordinary day feel special.
+
+I can’t promise that every day will be perfect, but I can promise to keep caring, listening, and doing my best for us. I hope this new year of your life brings you peace, good surprises, and all the things your heart has been wishing for.
+
+You deserve to feel loved not only today, but on the ordinary days too. Thank you for being you, my Beepep. Keep smiling, keep chasing your dreams, and remember that someone is cheering for you always.
+
+Happy birthday, my love. I’m so glad I get to share these memories with you.
+
+With love,
+Enemy ♡</div>
+  </section>
+
+  <section class="panel" id="cake-section">
+    <div class="kicker">close your eyes and make a wish</div>
+    <h2>Happy Birthday, Baby! 🎂</h2>
+    <div class="cake" aria-label="birthday cake">🎂</div>
+    <span id="flame">🕯️</span>
+    <p id="wish-text">Take a little moment, make a wish, then tap below. ✨</p>
+    <button onclick="makeWish()">I made a wish 💚</button>
+  </section>
+  <footer>Made with ♡ by Enemy, just for My Beepep</footer>
+</main>
+<script>
+function preview(input,id){
+  const img=document.getElementById(id);
+  if(input.files && input.files[0]){
+    img.src=URL.createObjectURL(input.files[0]);
+    img.classList.remove('hidden');
+  }
+}
+function makeWish(){
+ document.getElementById('flame').textContent='✨';
+ document.getElementById('wish-text').textContent='Wish made! I hope this year brings you so much happiness, My Beepep. 💚';
+}
+</script>
+</body>
+</html>
